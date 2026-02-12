@@ -103,19 +103,15 @@
   });
 
   const hoverSelector = 'a, button, [role="button"], input, textarea, select, label';
+  const hoverTargets = document.querySelectorAll(hoverSelector);
 
-  document.addEventListener('mouseover', (event) => {
-    if (event.target.closest(hoverSelector)) {
+  hoverTargets.forEach((el) => {
+    el.addEventListener('mouseenter', () => {
       cursor.classList.add('is-hover');
-    }
-  });
-
-  document.addEventListener('mouseout', (event) => {
-    const related = event.relatedTarget;
-    if (related && related.closest && related.closest(hoverSelector)) return;
-    if (event.target.closest(hoverSelector)) {
+    });
+    el.addEventListener('mouseleave', () => {
       cursor.classList.remove('is-hover');
-    }
+    });
   });
 })();
 

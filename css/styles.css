@@ -163,10 +163,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--accent);
+    width: 24px;
+    height: 24px;
+    border-radius: 0;
+    background: url('../images/Cursor.png') center / contain no-repeat;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 9999;
@@ -274,6 +274,10 @@ button {
   line-height: 1;
 }
 
+.nav__logo-x {
+  font-weight: 100;
+}
+
 .nav__links {
   display: flex;
   align-items: center;
@@ -365,7 +369,7 @@ button {
 /* --- Hero Section --- */
 .hero {
   padding: 160px 0 48px;
-  text-align: left;
+  text-align: center;
   max-width: 1120px;
   margin: 0 auto;
 }
@@ -390,6 +394,42 @@ button {
   object-fit: cover;
 }
 
+.hero__mascot {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 16px;
+  animation: mascot-float 4s ease-in-out infinite;
+}
+
+[data-theme="dark"] .hero__mascot {
+  filter: invert(1);
+}
+
+[data-theme="light"] .hero__mascot {
+  filter: none;
+}
+
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__mascot { animation: none; }
+}
+
+.hero__label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  display: block;
+}
+
 .hero__name {
   font-family: var(--font-heading);
   font-size: 3.25rem;
@@ -400,64 +440,56 @@ button {
   margin-bottom: 10px;
 }
 
-.hero__name-light {
-  font-weight: 300;
+.hero__name em {
+  color: var(--text-secondary);
 }
 
-.hero__tagline {
+.hero__description {
   font-size: 1rem;
+  font-weight: 300;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 480px;
-  margin: 0 auto 20px;
+  margin-top: 16px;
 }
 
-.hero__rotator {
-  --rotator-line: 1.15em;
-  display: inline-block;
-  height: var(--rotator-line);
-  overflow: hidden;
-  vertical-align: bottom;
-  margin-left: 6px;
-}
-
-.hero__rotator-inner {
+.hero__cta {
   display: flex;
-  flex-direction: column;
-  will-change: transform;
-  animation: hero-rotate 8s ease-in-out infinite;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 48px;
 }
 
-.hero__rotator-item {
-  white-space: nowrap;
-  text-align: left;
-  font-style: italic;
-  color: #b0b0b0;
+.hero__cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 50%;
+  border: 1px solid var(--pill-border);
+  background: var(--pill-bg);
+  transition: all 0.2s ease;
 }
 
-@keyframes hero-rotate {
-  0%,
-  28% {
-    transform: translateY(0);
-  }
-  33%,
-  61% {
-    transform: translateY(calc(-1 * var(--rotator-line)));
-  }
-  66%,
-  94% {
-    transform: translateY(calc(-2 * var(--rotator-line)));
-  }
-  100% {
-    transform: translateY(calc(-3 * var(--rotator-line)));
-  }
+.hero__cta a:hover {
+  color: var(--text-primary);
+  border-color: var(--pill-border-hover);
+  background: var(--pill-bg-hover);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero__rotator-inner {
-    animation: none;
-    transform: translateY(0);
-  }
+.hero__cta a svg {
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.hero__cta a[aria-label="LinkedIn"] svg {
+  transform: scale(0.9);
+  transform-origin: center;
 }
 
 .hero__social {
@@ -709,7 +741,7 @@ button {
 }
 
 .bio__role {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.8rem;
   color: var(--text-secondary);
 }
@@ -734,24 +766,30 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--handle-border);
-  background: var(--handle-bg);
-  color: var(--handle-icon);
+  border: 1px solid var(--pill-border);
+  background: var(--pill-bg);
+  color: var(--text-secondary);
   transition: all 0.2s ease;
 }
 
 .bio__social a:hover {
-  border-color: var(--handle-border);
-  background: var(--handle-bg);
-  color: var(--handle-icon);
+  color: var(--text-primary);
+  border-color: var(--pill-border-hover);
+  background: var(--pill-bg-hover);
 }
 
 .bio__social a svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.bio__social a[aria-label="LinkedIn"] svg {
+  transform: scale(0.9);
+  transform-origin: center;
 }
 
 /* --- Footer --- */
