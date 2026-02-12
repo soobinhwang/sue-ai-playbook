@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Title — Sue Hwang</title>
+  <meta name="description" content="A sample article detail page showing all available content components and layout patterns.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Prevent flash of wrong theme -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="page--project">
+  <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Home">
+        <span class="nav__logo-text">Sue Hwang</span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="active">Projects</a></li>
+        <li><a href="#">Writing</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+      </button>
+      <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <span class="article-header__category">Case Study</span>
+    <h1 class="article-header__title">Article Title <em>Goes Here</em></h1>
+    <p class="article-header__subtitle">This is a sample detail page that demonstrates all the available content blocks and layout patterns. Replace with your own content.</p>
+    <div class="article-header__meta">
+      <span>2026.02.08</span>
+      <span class="separator">|</span>
+      <span>7 min read</span>
+      <span class="separator">|</span>
+      <span>Case Study</span>
+      <span class="separator">|</span>
+      <span class="tag">#Tag</span>
+    </div>
+  </header>
+  <hr class="article-header__divider">
+
+  <!-- Article Body -->
+  <article class="article-body">
+
+    <p>This is the opening paragraph of the article. It sets up the context and draws the reader in. Use <strong>bold text</strong> for emphasis and <em>italic text</em> for softer emphasis or references.</p>
+
+    <p>A second paragraph continues the narrative. Keep paragraphs short and scannable — two to three sentences is ideal for web reading.</p>
+
+    <!-- Blockquote -->
+    <blockquote>
+      <p>This is a blockquote. Use it for pull quotes, key takeaways, or memorable lines that deserve visual emphasis.</p>
+    </blockquote>
+
+    <!-- Hero image placeholder -->
+    <figure>
+      <div class="image-placeholder" style="aspect-ratio: 16/9;">
+        Hero Image Placeholder
+      </div>
+      <figcaption>Caption text goes here — describe the image or provide additional context.</figcaption>
+    </figure>
+
+    <h2>Section Heading</h2>
+
+    <p>Use H2 headings to break the article into major sections. Each section should cover one idea or phase of the story.</p>
+
+    <!-- Project Metadata Table -->
+    <div class="project-meta">
+      <div class="project-meta__row">
+        <span class="project-meta__label">Project</span>
+        <span class="project-meta__value">Project name or brief description</span>
+      </div>
+      <div class="project-meta__row">
+        <span class="project-meta__label">Role</span>
+        <span class="project-meta__value">Your role in the project</span>
+      </div>
+      <div class="project-meta__row">
+        <span class="project-meta__label">Duration</span>
+        <span class="project-meta__value">Start date – End date</span>
+      </div>
+      <div class="project-meta__row">
+        <span class="project-meta__label">Key Results</span>
+        <span class="project-meta__value"><strong>Highlight key metrics</strong> and outcomes here</span>
+      </div>
+      <div class="project-meta__row">
+        <span class="project-meta__label">Tools</span>
+        <span class="project-meta__value"><strong>Primary tools</strong>, secondary tools</span>
+      </div>
+    </div>
+
+    <!-- Callout / Info Box -->
+    <div class="callout">
+      <div class="callout__icon">💡</div>
+      <p><strong>Info callout:</strong> Use this block to highlight helpful tips, definitions, or background context that supports the main content.</p>
+    </div>
+
+    <!-- Warning callout -->
+    <div class="callout callout--warning">
+      <div class="callout__icon">⚠️</div>
+      <p><strong>Warning callout:</strong> Use this block to flag common mistakes, gotchas, or important caveats the reader should be aware of.</p>
+    </div>
+
+    <h2>Step-by-Step Process</h2>
+
+    <p>Use numbered steps when walking through a process or tutorial.</p>
+
+    <!-- Numbered steps -->
+    <div class="step">
+      <div class="step__number">1</div>
+      <div class="step__content">
+        <h3>First Step</h3>
+        <p>Describe what the reader needs to do first. Keep it clear and actionable.</p>
+      </div>
+    </div>
+
+    <!-- Code block -->
+    <div class="code-block">
+      <div class="code-block__header">
+        <span class="code-block__label">Terminal</span>
+        <button class="code-block__copy" onclick="copyCode(this)">copy</button>
+      </div>
+      <pre><code>example-command --flag value</code></pre>
+    </div>
+
+    <div class="step">
+      <div class="step__number">2</div>
+      <div class="step__content">
+        <h3>Second Step</h3>
+        <p>Continue with the next step. Add code blocks, images, or callouts between steps as needed.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step__number">3</div>
+      <div class="step__content">
+        <h3>Third Step</h3>
+        <p>Wrap up the process with the final step and confirm the expected outcome.</p>
+      </div>
+    </div>
+
+    <!-- Video embed placeholder -->
+    <div class="video-embed">
+      <div class="video-embed__play">
+        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Unordered List</h2>
+
+    <p>Use bullet lists for non-sequential items, features, or observations:</p>
+
+    <ul>
+      <li><strong>First item:</strong> Description or detail about this point.</li>
+      <li><strong>Second item:</strong> Another observation or feature worth noting.</li>
+      <li><strong>Third item:</strong> Keep list items concise but informative.</li>
+      <li><strong>Fourth item:</strong> Three to five items per list is usually ideal.</li>
+    </ul>
+
+    <!-- Image placeholder -->
+    <figure>
+      <div class="image-placeholder" style="aspect-ratio: 4/3;">
+        Image Placeholder
+      </div>
+      <figcaption>Another image caption — use figures to break up long text sections.</figcaption>
+    </figure>
+
+    <h2>Ordered List</h2>
+
+    <p>Use numbered lists when order matters — rankings, priorities, or sequences:</p>
+
+    <ol>
+      <li><strong>First point</strong> — The most important or first-in-sequence item.</li>
+      <li><strong>Second point</strong> — Supporting detail or the next step in the sequence.</li>
+      <li><strong>Third point</strong> — Final item that wraps up the list.</li>
+    </ol>
+
+    <blockquote>
+      <p>Another blockquote to show how they look mid-article. Good for reflecting on a key insight or transition.</p>
+    </blockquote>
+
+    <hr>
+
+    <!-- Learnings section -->
+    <div class="learnings">
+      <div class="learnings__label">Learnings</div>
+
+      <h2>Key Takeaways</h2>
+
+      <ul>
+        <li><strong>First learning:</strong> Summarize the most important thing you discovered or confirmed.</li>
+        <li><strong>Second learning:</strong> What would you do differently next time?</li>
+        <li><strong>Third learning:</strong> What advice would you give someone starting this for the first time?</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <p>Closing paragraph — bring the article to a natural end. Reflect briefly and leave the reader with something to think about or act on.</p>
+
+    <!-- Published date -->
+    <p style="font-family: var(--font-heading); font-style: italic; color: var(--text-tertiary); margin-top: 48px;">Published February 8, 2026</p>
+
+    <!-- Tags -->
+    <div class="tags">
+      <span class="tag-pill">Tag One</span>
+      <span class="tag-pill">Tag Two</span>
+      <span class="tag-pill">Tag Three</span>
+    </div>
+
+  </article>
+
+  <!-- Prev / Next -->
+  <nav class="article-nav">
+    <div class="article-nav__inner">
+      <a href="#" class="article-nav__link article-nav__link--prev">
+        <span class="article-nav__label">&larr; Previous</span>
+        <div class="article-nav__title">Previous Article Title</div>
+        <div class="article-nav__desc">Short description of the previous article goes here.</div>
+      </a>
+      <a href="#" class="article-nav__link article-nav__link--next">
+        <span class="article-nav__label">Next &rarr;</span>
+        <div class="article-nav__title">Next Article Title</div>
+        <div class="article-nav__desc">Short description of the next article goes here.</div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer__text">Designed + vibe coded by Sue</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
