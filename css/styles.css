@@ -285,6 +285,10 @@ button {
   list-style: none;
 }
 
+.nav__theme-item {
+  list-style: none;
+}
+
 .nav__links a {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -1348,6 +1352,22 @@ button {
 }
 
 @media (max-width: 768px) {
+  .nav__inner {
+    padding: 0 20px;
+  }
+
+  .nav__logo {
+    left: 20px;
+    right: auto;
+  }
+
+  .nav__mobile-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .nav__links {
     display: none;
   }
@@ -1365,7 +1385,9 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--bg);
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 32px 24px;
     gap: 8px;
     z-index: 99;
@@ -1377,6 +1399,15 @@ button {
     padding: 12px 0;
     border-bottom: 1px solid var(--border);
     display: block;
+  }
+
+  .nav__links.open .nav__theme-item {
+    margin-top: 16px;
+  }
+
+  .nav__links.open .theme-toggle {
+    position: static;
+    transform: none;
   }
 
   .hero {
